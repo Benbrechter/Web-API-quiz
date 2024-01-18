@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Quiz App</title>
+</head>
+<body>
+    <nav>
+    <h1 class="h1text">View HighScore!</h1>
+    </nav>
+    <main>
+    <div class = "container">
+        <div id = "question-container" class = "hide"></div>
+        <div id = "question" class="question">Coding Quiz</div>
+        <p>This quiz was created to test your knowledge on the informating that has been taught up to this point. I wish youu luck! Reminder if you choose the wrong question there will be repercussions to your desisions!</p>
+        <div id="answer-button" class="btn-grid hide">
+         <div class = "btn" data-state="hidden"  data-string="Answer 1"></div>
+         <div class = "btn" data-state="hidden"  data-string="Answer 2"></div>
+         <div class = "btn" data-state="hidden"  data-string="Answer 3"></div>
+         <div class = "btn" data-state="hidden"  data-string="Answer 4"></div>
+        </div>
+        <div class = "start-control">
+            <button id="start-button" class = "start-btn btn">Start Quiz</button>
+        </div>
+    </div>
+</main>
+<script src="./assets/script.js"></script>
+</body>
+</html>

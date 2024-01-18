@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+}
+.h1text{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:#b341bf;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+.container{
+ display: flex;
+ justify-content: center;   
+ flex-direction: column;
+ align-items: center;
+ padding-top: 200px;
+ width: 500px;
+ 
+}
+.question{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+p{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding:15px 0px ;
+}
+.btn{
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    width: fit-content;
+    margin: 20px;
+    background-color: #b341bf;
+    color: aliceblue;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+
+}
+.start-control{
+    display: flex;
+    flex-direction: column;
+}
