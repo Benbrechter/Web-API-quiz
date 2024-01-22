@@ -1,14 +1,17 @@
-var startBtn = document.querySelector("#start-button");
-var btn1 = document.querySelector('#question1');
-var btn2 = document.querySelector('#question2');
-var btn3 = document.querySelector('#question3');
-var btn4 = document.querySelector('#question4');
-var questions = document.querySelector('#reload');
-var answerDisplay = document.querySelector('#TorFdisplay')
-var style = 'none'
-var timeEl = document.querySelector('#time')
-var btnAll = document.querySelectorAll('.Q')
-var secondsLeft = 75
+const startBtn = document.querySelector("#start-button");
+const questionContainerEl =  document.querySelector("#answer-grid");
+const answerBtn = document.querySelectorAll('#answer-button')
+const questionsElement = document.querySelector('#reload');
+//this var is for the paragraph that will ask the question
+const answerDisplay = document.querySelector('#TorFdisplay')
+//this wil display if you clkicked the correct answer
+var timeEl = document.querySelector('#time');
+
+var secondsLeft = 75;
+
+let shuffeledQuestions, currentQuestionIndex
+
+startBtn.addEventListener("click", startGame)
 
 // quiz results is going to be used when I store in Local Storage
 var quizResults = {
@@ -31,50 +34,46 @@ function setTime() {
   }
 
 
-startBtn.addEventListener("click", function(){
-//I guess this logic makes sense now that I look at it 
-if(style === 'none' ){
-    style = 'flex';
-
-}else if (style === 'flex' ){ 
-    btn1.setAttribute('style', 'display: flex;');
-    btn2.setAttribute('style', 'display: flex;');
-    btn3.setAttribute('style', 'display: flex;');
-    btn4.setAttribute('style', 'display: flex;');
-
-
-    startBtn.setAttribute('style', 'display: none;');
-
-   questions.textContent = 'What is the correct syntax for Math.floor?';
-   btn1.textContent= 'Math.floor(5.95)'
-   btn2.textContent= 'mathFloor= 5.95'
-   btn3.textContent= 'mathFloor= 5.95'
-   btn4.textContent= 'MathFloor(5.95)'
+function startGame(){
+    questionContainerEl.classList.remove('hide');
+    startBtn.classList.add('hide');
+shuffeledQuestions = questions.sort(() => Math.random() - .5)
+currentQuestionIndex = 0
+  setNextQuestion()
   setTime();
 }
 
-});
-//I tink this function is set up wrong or wherer it is put in is wrong
-// it also be the event listener 
-//I could also make it so it switches when every button is clicked
-//then add the text saying if it is correct.
-btnAll.addEventListener("click", function(){
-    var correct = 'Math.floor(5.95)'
-    if(correct === 'clicked'){
-   quizResults.score.push(1);
 
-   questions.textContent = 'What is Jquery';
-   btn1.textContent= 'A Web API'
-   btn2.textContent= 'A Third Party API'
-   btn3.textContent= 'A Method'
-   btn4.textContent= 'A Variable'
-  }else {
-  questions.textContent = 'What is Jquery';
-   btn1.textContent= 'A Web API'
-   btn2.textContent= 'A Third Party API'
-   btn3.textContent= 'A Method'
-   btn4.textContent= 'A Variable'
+
+function setNextQuestion(){
+showQuestion(shuffeledQuestions[currentQuestionIndex])
 }
-});
 
+function showQuestion(question) {
+    questionsElement.innerText = question.question
+    questions.answers.forEach(answer => {
+            const button = document.createElement('button');
+            button.innerText = answer.text;
+            button.classList.add('Q');
+            if (answer.correct) {
+                answerDisplay.textContent('Correct');
+            } else {
+                answerDisplay.textContent("Wrong");
+            }
+            button.addEventListener('click', selectAnswer);
+            questionContainerEl.appendChild(button);
+        });
 
+}
+
+const questions = [
+    {
+        question: 'What is the correct syntax for Math.floor?',
+        answers: [
+            {text: 'Math.floor(5.95)', correct: true},
+            {text: 'mathFloor(5.95)', correct: false},
+            {text: 'mathfloor(5.95)', correct: false},
+            {text: 'MATH.FLOOR(5.95)', correct: false},
+        ]
+    }
+]
