@@ -48,18 +48,22 @@ p{
     text-align: center;
     padding:15px 0px ;
 }
-.Q{
+.btn-grid{
     display: flex;
     flex-direction: column;
+}
+.Q{
+   
     height: max-content;
     width: fit-content;
-    margin: 20px;
+    margin: 10px;
     background-color: #b341bf;
     color: aliceblue;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
+    border-radius: 10px;
 }
-.hidden{
+.hide{
     display: none;
 }
 .TorF {
@@ -72,6 +76,7 @@ p{
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
 }
+ 
 .start-control{
     display: flex;
     flex-direction: column;
