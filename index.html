@@ -8,15 +8,15 @@
 </head>
 <body>
     <nav>
-    <h1 class="h1text">View HighScore!</h1>
-    <p class="time" id = "time">Timer</p>
+    <h1 class="h1text" id="highscore">View HighScore!</h1>
+    <p class="time" id = "time">Timer:</p>
     </nav>
-    <div id="score"></div>
+    <div id="score">Score:</div>
     <main>
     <div class = "container">
         <div id = "question-container"></div>
-        <div id = "question" class="question">Coding Quiz</div>
-        <p id="reload">This quiz was created to test your knowledge on the informating that has been taught up to this point. I wish youu luck! Reminder if you choose the wrong question there will be repercussions to your desisions!</p>
+        <div id = "quiz" class="question">Coding Quiz</div>
+        <p id="reload">This quiz was created to test your knowledge on the informating that has been taught up to this point. I wish you luck! Reminder if you choose the wrong question there will be repercussions to your desisions!</p>
         <div id="answer-grid" class="btn-grid hide" >
          <!-- <button class = "Q" id="answer-button">meow</button>
          <button class = "Q" id="answer-button">meow</button>
@@ -27,9 +27,16 @@
         <div class = "start-control">
             <button id="start-button" class = "start-btn">Start Quiz</button>
         </div>
-        <div class='hide' id="endScreen">
+        <div id="endScreen" class="hide">
+            <div class="initials">
+                <p>Enter initials: </p>
             <input type="text" id="inputIN">
-            <button id="submitBtn">Save!</button>
+            <button id="submitBtn" class="save">Save!</button>
+        </div>
+        </div>
+        <div class="hide" id="YN">
+            <button class="start-btn" id="YB">Yes</button>
+            <button class="start-btn" id="NB">NO</button>
         </div>
     </div>
 </main>
