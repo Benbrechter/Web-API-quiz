@@ -40,7 +40,7 @@ main{
 .question{
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 45px;
     padding-bottom: 10px;
 }
 p{
@@ -51,23 +51,28 @@ p{
 .btn-grid{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 .Q{
-   
+
     height: max-content;
-    width: fit-content;
+    width: max-content;
     margin: 10px;
     background-color: #b341bf;
     color: aliceblue;
     font-family: Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    border-radius: 10px;
+    font-size: 17px;
+    border: none;
+    border-radius: 1rem;
 }
 .hide{
     display: none;
 }
-.TorF {
-
+.text {
+    font-family:Helvetica, Arial, sans-serif;
+    text-align: start;
+    font-size: 25px;
+    font-weight: bold;
 }
 .start-btn  {
     margin: 20px;
@@ -80,4 +85,12 @@ p{
 .start-control{
     display: flex;
     flex-direction: column;
+}
+.initials{
+    display:flex;
+    align-items: center;
+}
+.save{
+    background-color: #b341bf;
+    color:aliceblue;
 }
